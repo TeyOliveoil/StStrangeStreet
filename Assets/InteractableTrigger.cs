@@ -7,6 +7,7 @@ public class InteractableTrigger : MonoBehaviour
     [SerializeField] private GameObject rotatable;
     [SerializeField] private Transform idleTransform;
     [SerializeField] private Transform activeTransform;
+    [SerializeField] private GameObject hands;
 
     private Animator animator;
     private GameObject newViewpoint;
@@ -45,6 +46,7 @@ public class InteractableTrigger : MonoBehaviour
             rotatable.transform.position = activeTransform.position;
             //pass rotatable to int manager
             interactableManager.currentRotatable = rotatable;
+            hands.SetActive(true);
         }
 
         if (isBed)
@@ -58,6 +60,7 @@ public class InteractableTrigger : MonoBehaviour
         playerMovement.state = PlayerMovement.State.wandering;
         rotatable.transform.position = idleTransform.position;
         newViewpoint.SetActive(false);
+        hands.SetActive(false);
     }
 
 }
