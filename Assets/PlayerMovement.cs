@@ -47,13 +47,13 @@ public class PlayerMovement : MonoBehaviour
         charAnimator.SetBool("isWalking", true);
         charHeadAnimator.SetBool("isWalking", true);
 
-        Debug.Log(_moveInput);
+        //Debug.Log(_moveInput);
         if (context.canceled)
         {
             charAnimator.SetBool("isWalking", false);
             charHeadAnimator.SetBool("isWalking", false);
             updateRotation = false;
-            Debug.Log("stopped walking");
+            //Debug.Log("stopped walking");
         }
     }
 
@@ -62,10 +62,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("jumping!");
     }
 
-    public void Interact(InputAction.CallbackContext context)
-    {
-        charHeadAnimator.SetTrigger("LookAround");
-        Debug.Log("interacting");
-    }
+    
 
 }
