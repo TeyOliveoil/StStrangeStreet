@@ -12,13 +12,13 @@ public class CameraTrigger : MonoBehaviour
         cameraObject = GetComponentInChildren<Camera>().gameObject;
         camManager = FindAnyObjectByType<CameraManager>();
 
-        if (!isMainCamera)
-        {
-            cameraObject.SetActive(false);
-        } else
+        if (isMainCamera)
         {
             cameraObject.SetActive(true);
             camManager.LatestCameraObject = cameraObject;
+        } else
+        {
+            cameraObject.SetActive(false);
         }
     }
 

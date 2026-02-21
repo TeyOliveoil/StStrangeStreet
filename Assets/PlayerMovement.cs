@@ -16,10 +16,15 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController charController;
     [SerializeField] private Animator charAnimator;
     [SerializeField] private Animator charHeadAnimator;
+    private InteractableManager interactableManager;
+
+    public enum State { wandering,inspecting}
+    public State state = State.wandering;
 
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+        interactableManager = FindAnyObjectByType<InteractableManager>();
     }
 
     private void Update()
@@ -41,20 +46,31 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        updateRotation = true;
-        _moveInput = context.ReadValue<Vector2>();
-        _moveDirection = new Vector3(_moveInput.x, 0f, _moveInput.y);
-        charAnimator.SetBool("isWalking", true);
-        charHeadAnimator.SetBool("isWalking", true);
-
-        //Debug.Log(_moveInput);
-        if (context.canceled)
+        if (state == State.wandering)
         {
-            charAnimator.SetBool("isWalking", false);
-            charHeadAnimator.SetBool("isWalking", false);
-            updateRotation = false;
-            //Debug.Log("stopped walking");
+            updateRotation = true;
+            _moveInput = context.ReadValue<Vector2>();
+            _moveDirection = new Vector3(_moveInput.x, 0f, _moveInput.y);
+            charAnimator.SetBool("isWalking", true);
+            charHeadAnimator.SetBool("isWalking", true);
+
+            //Debug.Log(_moveInput);
+            if (context.canceled)
+            {
+                charAnimator.SetBool("isWalking", false);
+                charHeadAnimator.SetBool("isWalking", false);
+                updateRotation = false;
+                //Debug.Log("stopped walking");
+            }
         }
+
+        if (state == State.inspecting)
+        {
+            Debug.Log("inspecting");
+            Vector2 _rotateInput = context.ReadValue<Vector2>();
+            
+        }
+        
     }
 
     public void Jump()

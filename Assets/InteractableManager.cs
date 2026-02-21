@@ -4,17 +4,16 @@ using UnityEngine.InputSystem;
 public class InteractableManager : MonoBehaviour
 {
 
-    [SerializeField] private LayerMask triggerLayer;
+    //[SerializeField] private LayerMask triggerLayer;
     private InteractableTrigger currentInteractable;
 
     [SerializeField] private Animator charAnimator;
     [SerializeField] private Animator charHeadAnimator;
     private bool isActive = false;
 
-    void Awake()
-    {
-        
-    }
+    public GameObject currentRotatable;
+    [SerializeField] private float rotateAmount = 10f;
+
 
     private void OnTriggerEnter(Collider trigger)
     {
@@ -32,6 +31,10 @@ public class InteractableManager : MonoBehaviour
     private void OnTriggerExit(Collider trigger)
     {
         //reset nearby interactable
+        if (currentInteractable != null)
+        {
+            currentInteractable.Deactivate();
+        }
         currentInteractable = null;
         isActive = false;
         //Debug.Log("saved interactable reset");
@@ -41,10 +44,8 @@ public class InteractableManager : MonoBehaviour
     {
         if (currentInteractable != null) //if something nearby
         {
-            if (context.started)
+            if (context.started) //trigger interaction
             {
-                Debug.Log("start?");
-                //trigger interaction
                 if (!isActive)
                 {
                     Debug.Log("interacting");
@@ -68,6 +69,13 @@ public class InteractableManager : MonoBehaviour
             Debug.Log("nothing nearby to interact with");
         }
         
+        
+    }
+
+    
+
+    public void Rotate(Vector2 addRotation)
+    {
         
     }
 }

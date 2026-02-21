@@ -3,22 +3,28 @@ using UnityEngine;
 public class InteractableTrigger : MonoBehaviour
 {
     [SerializeField] private string text;
+    [SerializeField] private GameObject rotatable;
+    [SerializeField] private Transform idleTransform;
+    [SerializeField] private Transform activeTransform;
+
     private Animator animator;
-    private Camera mainCamera;
-    private Camera newViewpoint;
+    private GameObject newViewpoint;
+    private PlayerMovement playerMovement;
+    private InteractableManager interactableManager;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        newViewpoint = GetComponentInChildren<Camera>();
-        mainCamera = Camera.main;
+        newViewpoint = GetComponentInChildren<Camera>().gameObject;
+        newViewpoint.SetActive(false);
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
+        interactableManager = FindAnyObjectByType<InteractableManager>();
     }
 
     public void Trigger()
     {
         Debug.Log("interaction triggered");
+        playerMovement.state = PlayerMovement.State.inspecting;
 
         if (animator != null)
         {
@@ -27,12 +33,23 @@ public class InteractableTrigger : MonoBehaviour
 
         if (newViewpoint != null)
         {
+            newViewpoint.SetActive(true);
             
+        }
+
+        if (rotatable != null)
+        {
+            rotatable.transform.position = activeTransform.position;
+            //pass rotatable to int manager
+            interactableManager.currentRotatable = rotatable;
         }
     }
 
     public void Deactivate()
     {
-
+        playerMovement.state = PlayerMovement.State.wandering;
+        rotatable.transform.position = idleTransform.position;
+        newViewpoint.SetActive(false);
     }
+
 }
