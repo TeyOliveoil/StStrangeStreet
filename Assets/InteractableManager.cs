@@ -13,7 +13,7 @@ public class InteractableManager : MonoBehaviour
 
     public GameObject currentRotatable;
     [SerializeField] private float rotateAmount = 10f;
-
+    [SerializeField] private GameObject playerVisual;
 
     private void OnTriggerEnter(Collider trigger)
     {
@@ -52,6 +52,7 @@ public class InteractableManager : MonoBehaviour
                     //activate
                     isActive = true;
                     currentInteractable.Trigger();
+                    playerVisual.SetActive(false);
                     return;
                 } else
                 {
@@ -59,6 +60,7 @@ public class InteractableManager : MonoBehaviour
                     //deactivate
                     isActive = false;
                     currentInteractable.Deactivate();
+                    playerVisual.SetActive(true);
                 }
             }
             

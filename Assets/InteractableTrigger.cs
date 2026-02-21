@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InteractableTrigger : MonoBehaviour
 {
+    [SerializeField] private bool isBed;
     [SerializeField] private string text;
     [SerializeField] private GameObject rotatable;
     [SerializeField] private Transform idleTransform;
@@ -11,6 +12,7 @@ public class InteractableTrigger : MonoBehaviour
     private GameObject newViewpoint;
     private PlayerMovement playerMovement;
     private InteractableManager interactableManager;
+    private GameManager gameManager;
 
     void Awake()
     {
@@ -19,6 +21,7 @@ public class InteractableTrigger : MonoBehaviour
         newViewpoint.SetActive(false);
         playerMovement = FindAnyObjectByType<PlayerMovement>();
         interactableManager = FindAnyObjectByType<InteractableManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     public void Trigger()
@@ -42,6 +45,11 @@ public class InteractableTrigger : MonoBehaviour
             rotatable.transform.position = activeTransform.position;
             //pass rotatable to int manager
             interactableManager.currentRotatable = rotatable;
+        }
+
+        if (isBed)
+        {
+            gameManager.NewDay();
         }
     }
 

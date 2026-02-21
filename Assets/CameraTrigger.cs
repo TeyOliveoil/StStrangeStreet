@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class CameraTrigger : MonoBehaviour
 {
-    [SerializeField] private bool isMainCamera = false;
+    [SerializeField] private bool isMainCamera;
     private GameObject cameraObject;
     CameraManager camManager;
 

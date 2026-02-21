@@ -68,7 +68,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("inspecting");
             Vector2 _rotateInput = context.ReadValue<Vector2>();
-            
+            //rotate object here
+            //check if door is on obj raycast
+            //show text to enter door?
         }
         
     }
