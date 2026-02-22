@@ -31,12 +31,13 @@ public class CameraTrigger : MonoBehaviour
         {
             //activate current camera
             cameraObject.SetActive(true);
-            //deactivate latest camera
-            camManager.LatestCameraObject.SetActive(false);
-            //update latest camera with this one
-            camManager.LatestCameraObject = cameraObject;
-
-
+            if (camManager.LatestCameraObject != cameraObject)
+            {
+                //deactivate latest camera
+                camManager.LatestCameraObject.SetActive(false);
+                //update latest camera with this one
+                camManager.LatestCameraObject = cameraObject;
+            }
         }
     }
 }

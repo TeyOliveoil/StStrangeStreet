@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _moveDirection;
     [SerializeField] private float moveSpeed;
     private bool updateRotation = false;
+    [SerializeField] private float rotateAmount = 100f;
 
     [Tooltip("Smoothing time for rotation")]
     [SerializeField] private float smoothTime = 0.05f;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (updateRotation)
+        if (updateRotation) //of player
         {
             //update target angle to movement direction
             var targetAngle = Mathf.Atan2(_moveDirection.x, _moveDirection.z) * Mathf.Rad2Deg;
@@ -42,6 +43,40 @@ public class PlayerMovement : MonoBehaviour
         //update p position using movement direction + speed
         charController.Move(_moveDirection * moveSpeed * Time.deltaTime);
 
+        //update rotation of object
+        if (state == State.inspecting)
+        {
+            RotateObject();
+            //check if door is on obj raycast
+            //show text to enter door?
+        }
+
+    }
+    private void RotateObject()
+    {
+        Vector3 _rotateOutput = new Vector3(0, 0, 0);
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            _rotateOutput = Vector3.down;
+        }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            _rotateOutput = Vector3.up;
+        }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            _rotateOutput = Vector3.left;
+        }
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            _rotateOutput = Vector3.right;
+        }
+
+        //apply rotation
+        Transform ObjToRotate = interactableManager.currentRotatable.transform;
+        ObjToRotate.RotateAround(ObjToRotate.position, _rotateOutput, rotateAmount * Time.deltaTime);
+        
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -62,17 +97,7 @@ public class PlayerMovement : MonoBehaviour
                 updateRotation = false;
                 //Debug.Log("stopped walking");
             }
-        }
-
-        if (state == State.inspecting)
-        {
-            Debug.Log("inspecting");
-            Vector2 _rotateInput = context.ReadValue<Vector2>();
-            //rotate object here
-            //check if door is on obj raycast
-            //show text to enter door?
-        }
-        
+        }        
     }
 
     public void Jump()

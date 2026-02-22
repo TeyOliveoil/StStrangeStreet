@@ -12,7 +12,6 @@ public class InteractableManager : MonoBehaviour
     private bool isActive = false;
 
     public GameObject currentRotatable;
-    [SerializeField] private float rotateAmount = 10f;
     [SerializeField] private GameObject playerVisual;
 
     private void OnTriggerEnter(Collider trigger)
