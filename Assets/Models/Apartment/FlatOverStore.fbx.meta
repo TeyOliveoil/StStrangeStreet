@@ -1,0 +1,582 @@
+fileFormatVersion: 2
+guid: f12f3bf084aa42f42ae1e43076d688eb
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flur
+    second: {fileID: 2100000, guid: 9ee4185dc67eb4d4284e1488d165000b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchenkram.001
+    second: {fileID: 2100000, guid: 9c36328b206bfe64aa29b30da68ef721, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchenkram.002 box red.001
+    second: {fileID: 2100000, guid: 51546264b796d7248ba8e84fd94091cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchenkram.003
+    second: {fileID: 2100000, guid: e4f55dc4a00a23c4795ffebc45078eb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KramsNeu26.001
+    second: {fileID: 2100000, guid: d1dd0d5e34ef069498c64976ee552ac1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MasterMat
+    second: {fileID: 2100000, guid: 62d745a4e0022d24e9481d78948607f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MasterTex2NEW_WINDOWS
+    second: {fileID: 2100000, guid: cf7603193ca057d47aaafa15466f3cd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MasterTex2New
+    second: {fileID: 2100000, guid: 116caf9daf07a444eb57c7dacb0b2408, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: fbeddf05a84269d438a24b0570560bf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 7a195389a71abb24fb9f6f753d70968c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: b575ff0282de65d449cc4eb4d6495c12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 8b7755dd43851f1489accb7968a4f6f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 28e4fabb9eea6194685e52682ba6cc48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.068
+    second: {fileID: 2100000, guid: b26d358d25e40494c9bd905f64a0a7f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.070
+    second: {fileID: 2100000, guid: 4e36bbb2461eec946966c7af0c30e9b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.071
+    second: {fileID: 2100000, guid: a83b832e7d914ab449f8c1a746728dae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WashingobjectsMaster.001
+    second: {fileID: 2100000, guid: d6e327c1d6e04ed4983a29ea6a4bd8a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book
+    second: {fileID: 2100000, guid: e01442076c663a241bcc6510daf30015, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book stuff.001
+    second: {fileID: 2100000, guid: dbb0b65f56206d24b877410bb4b68a2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book2.001
+    second: {fileID: 2100000, guid: a35858e72f09c0a4bb2bb6419f96b102, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book2.002
+    second: {fileID: 2100000, guid: f156ca4c10659e742b03e47e954d2b59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diverses_einfarbiges.003
+    second: {fileID: 2100000, guid: 88127df51ee137643bcbf5a5f3f6bfac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diverses_einfarbiges.004
+    second: {fileID: 2100000, guid: 063ffcb4befd7f84c835d61c6a9e267e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doorsMat
+    second: {fileID: 2100000, guid: 2600e9ccff029864683829fc62e7f297, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fabric
+    second: {fileID: 2100000, guid: fb8135f608641f9448e6a9de3cfba5ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fridgeMat
+    second: {fileID: 2100000, guid: 68806ce357771494fb536eacabf5fc81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "gew\xFCrze_tex.001"
+    second: {fileID: 2100000, guid: e6c8615df40819847b2de56137874f26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "gr\xFCnerschrank.001"
+    second: {fileID: 2100000, guid: e4a2daaeefb23374a91114abbe427a72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: imagetex2.001
+    second: {fileID: 2100000, guid: 036f5e33efc7ec54ba1d091128607774, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: imagetex2.002
+    second: {fileID: 2100000, guid: a00690958a404c048bfbbf89d9dd9c80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: imagetex2.003
+    second: {fileID: 2100000, guid: c61ab0e802be2dd4795261c888493b7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kartonsja.001
+    second: {fileID: 2100000, guid: fadf86a9553578448922a3f3dc08bc4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keyboard.002
+    second: {fileID: 2100000, guid: d2e4fb36ce19f8546b90b72c993dc701, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kitchen tiles
+    second: {fileID: 2100000, guid: 3de044c3290ca654faee80ae86e7e511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kitchentex
+    second: {fileID: 2100000, guid: bc1367f450f22934a82e86c1412e5ce9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: klokrammaster.001
+    second: {fileID: 2100000, guid: 47a15d80f63ddf1439a0ea4783acdbb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kram2
+    second: {fileID: 2100000, guid: e7bf07e44dc2a5f4fa4d3fac15a893d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kram2.001
+    second: {fileID: 2100000, guid: f348a973361972f48b58902056e480f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: morestuffref.001
+    second: {fileID: 2100000, guid: 261d26053e19a4e4bbfcc53920d36051, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: morestuffref.002
+    second: {fileID: 2100000, guid: 45f8aef18e6b22640823759c51690912, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: morestuffref.003
+    second: {fileID: 2100000, guid: 983f1f3a8f653684aa4e1e3c41e89f63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenA.001
+    second: {fileID: 2100000, guid: 042650d86aed79e4bb4784721217bc3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenA.002
+    second: {fileID: 2100000, guid: c0b10d11a5e473043ab8d830bfacb594, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenB.001
+    second: {fileID: 2100000, guid: 864d3a7ef35beed4dae1d57a8cbc1ea9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenB.002
+    second: {fileID: 2100000, guid: 9dd7cd64d7a30164a80b952202b247fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenC.001
+    second: {fileID: 2100000, guid: 190bcf09efe3c35499ec66adcfa71be4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenC.002
+    second: {fileID: 2100000, guid: 11cc56babe747b140ac6a1338d80404f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenD.001
+    second: {fileID: 2100000, guid: 6aabe1e1e432a4e4283f9d7fec9b91e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: notizenD.002
+    second: {fileID: 2100000, guid: a588fa7ae74bad24b85938f050d74f9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: olive oil bottle flat tex.001
+    second: {fileID: 2100000, guid: e323821694d666241ae541c84a914729, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pinke kanne.001
+    second: {fileID: 2100000, guid: ca712327c43b3b0468a239f2f6cfbd8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schrankMat
+    second: {fileID: 2100000, guid: 3802ad1eec22b9e45a0dcfcc80301b85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "sch\xFCssel4.001"
+    second: {fileID: 2100000, guid: 6db423533e3ebe348acad54a16288b46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soap1Material.001
+    second: {fileID: 2100000, guid: 3977bc0a31708b04aa01dedd37594b78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soap1cap.001
+    second: {fileID: 2100000, guid: e5bbe59a6d4d450448ed0221682fa5e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steckdoselang.001
+    second: {fileID: 2100000, guid: 344f068dfda608c4c8c04e19c7e56635, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stuff other stuff.001
+    second: {fileID: 2100000, guid: b90cf49ca60328b48b2bd0429d96134d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: texMaster
+    second: {fileID: 2100000, guid: af3e6cff0bda33f4c96a59d1dba1c2c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tinystuffsidetable.001
+    second: {fileID: 2100000, guid: 841bf4ec0ae3935419cd71c490bca813, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tinystuffsidetable.002
+    second: {fileID: 2100000, guid: 1d23a9f3b4e1a13409871f101449238a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tinystuffsidetable.003
+    second: {fileID: 2100000, guid: 56163b68a8087ce40bedc2becc452570, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tongsjaja.001
+    second: {fileID: 2100000, guid: 997658662464958448b9362ff5e3061b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windowSingleMat
+    second: {fileID: 2100000, guid: e0c6ef364781ba34abecb49a04e82fbf, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_tiles
+    second: {fileID: 2800000, guid: 4500c1dba0e764e4d89e7fbbf08f2493, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HallwayTex1
+    second: {fileID: 2800000, guid: d45bd3a818e074b4eab9e70973078d3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MasterTex1
+    second: {fileID: 2800000, guid: cc7c158b6f989c147ac4ef8d6372950b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PC_texture
+    second: {fileID: 2800000, guid: 610b366947482b94787ceb0fc3723edb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PC_texture2
+    second: {fileID: 2800000, guid: 97f9ac3d46f736547b60811bd709e026, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roughness_tiles
+    second: {fileID: 2800000, guid: 331777d87187dd9408aa9aa198593279, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Washinobjects...
+    second: {fileID: 2800000, guid: e3cea23fedbcd8640bf33f95e9a42ef6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bathkram
+    second: {fileID: 2800000, guid: 95fe887586bbc8a4d97749bd8f7f63f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: booktwo
+    second: {fileID: 2800000, guid: c3b660a8c32204d419c2da1369455364, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boxesside
+    second: {fileID: 2800000, guid: b1d1e21ebb6cd2a4fa32d610f803f702, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: charms
+    second: {fileID: 2800000, guid: 6ff9736858c5b3943add59925b637dff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: doorsTex
+    second: {fileID: 2800000, guid: c96b510368891f14cb4c77a6074acc5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fenster_single
+    second: {fileID: 2800000, guid: 7c86d41a317d85f4dba81956c3be6757, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: flowerblanket3
+    second: {fileID: 2800000, guid: 596c0192187efbc49b73059cfc1cfe94, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fridgelschrankTex
+    second: {fileID: 2800000, guid: 2976453468cd2bc4a9042ed49738873d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: kitchen_tex_wholejpg
+    second: {fileID: 2800000, guid: 4f24e9d9596b26240b6cd69f287b65e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "k\xFCchenkramObj_tex"
+    second: {fileID: 2800000, guid: 388965311f1acf14d98ea8d95b384243, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: master2
+    second: {fileID: 2800000, guid: 7ca6df1057cb97c489ed580f9fcf65b3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: masterTex2
+    second: {fileID: 2800000, guid: 9581ba96823de2543a600795ba676438, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: master_tex_1
+    second: {fileID: 2800000, guid: 5648cea692637cf45bd1da7c85be6d18, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: master_tex_1(seconddsave
+    second: {fileID: 2800000, guid: 7dc402a4c47212e428574e1582611e1f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mastertex_5
+    second: {fileID: 2800000, guid: 0962e3304e9ec014281ee534dcb9f6fe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: notetwo
+    second: {fileID: 2800000, guid: 1e8324d68ae58c14bae53cc6c109af9b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: notizA
+    second: {fileID: 2800000, guid: 9b99b47910b7cae45808f5ed15e1ecb1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: notizC
+    second: {fileID: 2800000, guid: 929977224771bd94bb5d7e2ca5db61e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pot_texture_2
+    second: {fileID: 2800000, guid: 9054c641f647308449a1e7b74079e848, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rough-fabric_albedo
+    second: {fileID: 2800000, guid: 5a4325660adf4d944a33aedf913f6ce5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rough-fabric_roughness
+    second: {fileID: 2800000, guid: a140ce27eb4172646b9fa7fcc178b8f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: schrankTex
+    second: {fileID: 2800000, guid: 3e965415122ded449859310a26038a9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stuff_table
+    second: {fileID: 2800000, guid: 9e2ba19c79a649e49b47cb511948e198, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tex kitchen sink
+    second: {fileID: 2800000, guid: 22b0e959f22615147a09a37e48d1cf46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tex_master_ii
+    second: {fileID: 2800000, guid: d3891e9d31b126443ad9f88aee8819fe, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
