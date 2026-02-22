@@ -1,9 +1,39 @@
 fileFormatVersion: 2
-guid: 0324bd30846a94a41871646e56cf43dc
+guid: 70401736a27344940a57105d7abc67bd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Black
+    second: {fileID: 2100000, guid: c4fb3f054071e9d4d9c0c1164d4559f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Fur
+    second: {fileID: 2100000, guid: c2d48c39c0c67a245842dbb92e6a2702, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Green
+    second: {fileID: 2100000, guid: 99398aeab1c60754d8da30af71cafeb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Higvis
+    second: {fileID: 2100000, guid: a5cb6107124de78448423916b7b743cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Orange
+    second: {fileID: 2100000, guid: 94c2d1976a0644c43a9d54b2f94265db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Yellow
+    second: {fileID: 2100000, guid: 51ce84edcd0f88d40bb01937ba7599d9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
