@@ -1,10 +1,12 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] Doors;
     [SerializeField] public int CurrentDoor = 0;
-    private Camera currentViewpoint;
+    [SerializeField] private GameObject DoorText;
+    [HideInInspector] public Camera currentViewpoint;
 
     public void NewDay()
     {
@@ -15,11 +17,12 @@ public class GameManager : MonoBehaviour
 
     public void CheckDoor()
     {
-        Transform currentViewTransform = currentViewpoint.gameObject.transform;
+        //Transform currentViewTransform = currentViewpoint.gameObject.transform;
         //raycast to check if door please
         //Ray ray = new Ray(currentViewTransform.position, currentViewTransform.forward);
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = currentViewpoint.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Debug.DrawRay(ray.origin, ray.direction * 10);
         //show door hint text
+       // DoorText.SetActive(true);
     }
 }

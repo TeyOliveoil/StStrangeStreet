@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator charAnimator;
     [SerializeField] private Animator charHeadAnimator;
     private InteractableManager interactableManager;
+    private GameManager gameManager;
 
     public enum State { wandering,inspecting}
     public State state = State.wandering;
@@ -26,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         interactableManager = FindAnyObjectByType<InteractableManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
+
     }
 
     private void Update()
@@ -48,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
         {
             RotateObject();
             //check if door is on obj raycast
-            //show text to enter door?
+            gameManager.CheckDoor();
+
         }
 
     }

@@ -6,11 +6,13 @@ public class CameraTrigger : MonoBehaviour
     [SerializeField] private bool isMainCamera;
     private GameObject cameraObject;
     CameraManager camManager;
+    GameManager gameManager;
 
     private void Awake()
     {
         cameraObject = GetComponentInChildren<Camera>().gameObject;
         camManager = FindAnyObjectByType<CameraManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
 
         if (isMainCamera)
         {
@@ -37,6 +39,7 @@ public class CameraTrigger : MonoBehaviour
                 camManager.LatestCameraObject.SetActive(false);
                 //update latest camera with this one
                 camManager.LatestCameraObject = cameraObject;
+                gameManager.currentViewpoint = cameraObject.GetComponent<Camera>();
             }
         }
     }
