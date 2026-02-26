@@ -73,10 +73,5 @@ public class InteractableManager : MonoBehaviour
         
     }
 
-    
-
-    public void Rotate(Vector2 addRotation)
-    {
-        
-    }
+   
 }
