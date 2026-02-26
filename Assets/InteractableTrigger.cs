@@ -10,7 +10,7 @@ public class InteractableTrigger : MonoBehaviour
     [SerializeField] private GameObject hands;
 
     private Animator animator;
-    private GameObject newViewpoint;
+    [SerializeField] private GameObject newViewpoint;
     private PlayerMovement playerMovement;
     private InteractableManager interactableManager;
     private GameManager gameManager;
@@ -18,7 +18,7 @@ public class InteractableTrigger : MonoBehaviour
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        newViewpoint = GetComponentInChildren<Camera>().gameObject;
+        //newViewpoint = GetComponentInChildren<Camera>().gameObject;
         newViewpoint.SetActive(false);
         playerMovement = FindAnyObjectByType<PlayerMovement>();
         interactableManager = FindAnyObjectByType<InteractableManager>();

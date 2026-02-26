@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private bool updateRotation = false;
     [SerializeField] private float rotateAmount = 100f;
+    [HideInInspector]
+    public ViewDir viewDir = ViewDir.Z_pos;
 
     [Tooltip("Smoothing time for rotation")]
     [SerializeField] private float smoothTime = 0.05f;
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     public enum State { wandering,inspecting}
     public State state = State.wandering;
+
+    public enum ViewDir { Z_pos, Z_neg, X_pos, X_neg}
 
     private void Awake()
     {
@@ -89,7 +93,15 @@ public class PlayerMovement : MonoBehaviour
         {
             updateRotation = true;
             _moveInput = context.ReadValue<Vector2>();
-            _moveDirection = new Vector3(_moveInput.x, 0f, _moveInput.y);
+            if (viewDir == ViewDir.Z_pos)      { _moveDirection = new Vector3(_moveInput.x, 0f, _moveInput.y);} 
+
+            else if (viewDir == ViewDir.Z_neg) { _moveDirection = new Vector3(-_moveInput.x, 0f, _moveInput.y);} 
+
+            else if (viewDir == ViewDir.X_pos) { _moveDirection = new Vector3(_moveInput.y, 0f, -_moveInput.x);} 
+
+            else if (viewDir == ViewDir.X_neg) { _moveDirection = new Vector3(-_moveInput.y, 0f, _moveInput.x);} 
+            else { Debug.Log("unknown view direction!");}
+            
             charAnimator.SetBool("isWalking", true);
             charHeadAnimator.SetBool("isWalking", true);
 

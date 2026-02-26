@@ -7,12 +7,15 @@ public class CameraTrigger : MonoBehaviour
     private GameObject cameraObject;
     CameraManager camManager;
     GameManager gameManager;
+    PlayerMovement playerMovement;
+    [SerializeField] private PlayerMovement.ViewDir viewDir;
 
     private void Awake()
     {
         cameraObject = GetComponentInChildren<Camera>().gameObject;
         camManager = FindAnyObjectByType<CameraManager>();
         gameManager = FindAnyObjectByType<GameManager>();
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
 
         if (isMainCamera)
         {
@@ -33,6 +36,9 @@ public class CameraTrigger : MonoBehaviour
         {
             //activate current camera
             cameraObject.SetActive(true);
+            //update view direction
+            playerMovement.viewDir = viewDir;
+
             if (camManager.LatestCameraObject != cameraObject)
             {
                 //deactivate latest camera
