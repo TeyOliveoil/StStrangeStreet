@@ -12,12 +12,14 @@ public class InteractableTrigger : MonoBehaviour
     private Animator animator;
     [SerializeField] private GameObject newViewpoint;
     private PlayerMovement playerMovement;
+    [SerializeField] private GameObject playerVisual;
     private InteractableManager interactableManager;
     private GameManager gameManager;
 
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        
         //newViewpoint = GetComponentInChildren<Camera>().gameObject;
         newViewpoint.SetActive(false);
         playerMovement = FindAnyObjectByType<PlayerMovement>();
@@ -27,40 +29,72 @@ public class InteractableTrigger : MonoBehaviour
 
     public void Trigger()
     {
-        Debug.Log("interaction triggered");
-        playerMovement.state = PlayerMovement.State.inspecting;
-
+        //Debug.Log("interaction triggered");
+        playerMovement.state = PlayerMovement.State.looking;
+        
         if (animator != null)
         {
-            //play animation, use trigger
+            //play animation, use trigger "StartInteraction" + "EndInteraction"
+            animator.SetTrigger("StartInteraction");
+
+            if (isBed)
+            {
+                gameManager.NewDay();
+            }
+        } else
+        {
+            SetInteractableView();
         }
+
+        
+    }
+
+    public void SetInteractableView()
+    {
+        Debug.Log("setting interaction view");
+
+        //change gamemode to inspecting object
+        playerMovement.state = PlayerMovement.State.looking;
+        //update viewpoint
+        gameManager.currentViewpoint = newViewpoint.GetComponent<Camera>();
+        //hide player
+        playerVisual.SetActive(false);
 
         if (newViewpoint != null)
         {
             newViewpoint.SetActive(true);
-            
         }
+    }
 
-        if (rotatable != null)
-        {
-            rotatable.transform.position = activeTransform.position;
-            //pass rotatable to int manager
-            interactableManager.currentRotatable = rotatable;
-            hands.SetActive(true);
-        }
+    public void PickUpObject()
+    {
+        //move rotatable to active position
+        rotatable.transform.position = activeTransform.position;
+        //pass rotatable to interaction manager
+        interactableManager.currentRotatable = rotatable;
+        //activate hands ui element
+        hands.SetActive(true);
 
-        if (isBed)
-        {
-            gameManager.NewDay();
-        }
+        playerMovement.state = PlayerMovement.State.inspecting;
+        //add case for if nothing to pick up!?
     }
 
     public void Deactivate()
     {
+        Debug.Log("deactivating interaction");
         playerMovement.state = PlayerMovement.State.wandering;
         rotatable.transform.position = idleTransform.position;
-        newViewpoint.SetActive(false);
+        //reset view
         hands.SetActive(false);
+        playerVisual.SetActive(true);
+        newViewpoint.SetActive(false);
+        interactableManager.currentRotatable = null;
+
+        //reset animation
+        if (animator != null)
+        {
+            animator.SetTrigger("EndInteraction");
+        }
     }
 
 }

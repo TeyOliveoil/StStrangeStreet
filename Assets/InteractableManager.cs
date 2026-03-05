@@ -10,9 +10,10 @@ public class InteractableManager : MonoBehaviour
     [SerializeField] private Animator charAnimator;
     [SerializeField] private Animator charHeadAnimator;
     private bool isActive = false;
+    private bool pickedUp = false;
 
     public GameObject currentRotatable;
-    [SerializeField] private GameObject playerVisual;
+    //[SerializeField] private GameObject playerVisual;
 
     private void OnTriggerEnter(Collider trigger)
     {
@@ -30,10 +31,7 @@ public class InteractableManager : MonoBehaviour
     private void OnTriggerExit(Collider trigger)
     {
         //reset nearby interactable
-        if (currentInteractable != null)
-        {
-            currentInteractable.Deactivate();
-        }
+        
         currentInteractable = null;
         isActive = false;
         //Debug.Log("saved interactable reset");
@@ -45,21 +43,33 @@ public class InteractableManager : MonoBehaviour
         {
             if (context.started) //trigger interaction
             {
-                if (!isActive)
+                if (!isActive && !pickedUp) //at start of interaction with object
                 {
                     Debug.Log("interacting");
                     //activate
                     isActive = true;
                     currentInteractable.Trigger();
-                    playerVisual.SetActive(false);
+                    
                     return;
-                } else
+                } 
+                //add a case for if there's nothing to pick up!
+                if (isActive && !pickedUp) //if interacting, but not picked up yet
+                {
+                    //pick up object
+                    Debug.Log("pick up object here");
+                    pickedUp = true;
+                    currentInteractable.PickUpObject();
+                    
+                    return;
+                }
+                if (isActive && pickedUp) //if picked up object, now leaving or entering door (leaving should be own button - escape?)
                 {
                     Debug.Log("deactivated interacting");
                     //deactivate
                     isActive = false;
+                    pickedUp = false;
                     currentInteractable.Deactivate();
-                    playerVisual.SetActive(true);
+                    
                 }
             }
             

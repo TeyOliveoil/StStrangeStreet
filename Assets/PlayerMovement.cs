@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private InteractableManager interactableManager;
     private GameManager gameManager;
 
-    public enum State { wandering,inspecting}
+    public enum State { wandering,looking,inspecting}
     public State state = State.wandering;
 
     public enum ViewDir { Z_pos, Z_neg, X_pos, X_neg}
@@ -46,22 +46,26 @@ public class PlayerMovement : MonoBehaviour
             //apply angle to p objects
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
-
+        
         //update p position using movement direction + speed
         charController.Move(_moveDirection * moveSpeed * Time.deltaTime);
 
         //update rotation of object
         if (state == State.inspecting)
         {
+            Debug.Log("rotating");
             RotateObject();
             //check if door is on obj raycast
             gameManager.CheckDoor();
 
         }
 
+        Debug.Log(state);
+
     }
     private void RotateObject()
     {
+        
         Vector3 _rotateOutput = new Vector3(0, 0, 0);
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -84,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
         //apply rotation
         Transform ObjToRotate = interactableManager.currentRotatable.transform;
         ObjToRotate.RotateAround(ObjToRotate.position, _rotateOutput, rotateAmount * Time.deltaTime);
+        
+        
         
     }
 
