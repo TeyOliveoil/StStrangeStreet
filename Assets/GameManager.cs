@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         //Ray ray = new Ray(currentViewTransform.position, currentViewTransform.forward);
         Ray ray = currentViewpoint.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Debug.DrawRay(ray.origin, ray.direction * 10);
+        Physics.Raycast(ray);
         //show door hint text
        // DoorText.SetActive(true);
     }
