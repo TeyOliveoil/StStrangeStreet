@@ -1,9 +1,15 @@
 using UnityEngine;
+using TMPro;
 
+[RequireComponent(typeof(BoxCollider))]
 public class InteractableTrigger : MonoBehaviour
 {
     [SerializeField] private bool isBed;
-    [SerializeField] private string text;
+    [SerializeField] public bool onlyAnimation;
+    private bool animationActive = false;
+    [SerializeField] private string wanderText;
+    [SerializeField] private string inspectText;
+    private TMP_Text textSpace;
     [SerializeField] private GameObject rotatable;
     [SerializeField] private Transform idleTransform;
     [SerializeField] private Transform activeTransform;
@@ -18,35 +24,69 @@ public class InteractableTrigger : MonoBehaviour
 
     void Awake()
     {
+        textSpace = GameObject.FindWithTag("TextSpace").GetComponent<TMP_Text>();
+        Debug.Log(textSpace.text);
         animator = GetComponentInChildren<Animator>();
         
         //newViewpoint = GetComponentInChildren<Camera>().gameObject;
-        newViewpoint.SetActive(false);
+        if (newViewpoint != null)
+        {
+            newViewpoint.SetActive(false);
+        }
+        
         playerMovement = FindAnyObjectByType<PlayerMovement>();
         interactableManager = FindAnyObjectByType<InteractableManager>();
         gameManager = FindAnyObjectByType<GameManager>();
     }
 
+    public void showWanderText()
+    {
+        textSpace.text = wanderText;
+    }
+    public void showInspectText()
+    {
+        textSpace.text = inspectText;
+    }
+
+    public void resetText()
+    {
+        textSpace.text = "";
+    }
+
     public void Trigger()
     {
-        //Debug.Log("interaction triggered");
+        //limit player movement!
         playerMovement.state = PlayerMovement.State.looking;
-        
+
+        //if there is an animation here then
         if (animator != null)
         {
-            //play animation, use trigger "StartInteraction" + "EndInteraction"
+            //play animation, use trigger "StartInteraction" + "EndInteraction" 
             animator.SetTrigger("StartInteraction");
+            //SetInteractableView is called in the actual animation timeline itself so the timing fits :-)
 
             if (isBed)
             {
-                gameManager.NewDay();
+                gameManager.NewDay(); //increase day, might not be necessary!!
             }
-        } else
+        }
+        else
         {
             SetInteractableView();
         }
+    }
 
-        
+    public void TriggerAnimation()
+    {
+        if (!animationActive) //if animation is not "active"
+        {
+            animator.SetTrigger("StartInteraction"); //start animation
+        }
+        else
+        {
+            animator.SetTrigger("EndInteraction"); //end animation
+        }
+        animationActive = !animationActive;
     }
 
     public void SetInteractableView()
@@ -89,6 +129,7 @@ public class InteractableTrigger : MonoBehaviour
         playerVisual.SetActive(true);
         newViewpoint.SetActive(false);
         interactableManager.currentRotatable = null;
+        resetText();
 
         //reset animation
         if (animator != null)

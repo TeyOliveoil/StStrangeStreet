@@ -53,14 +53,14 @@ public class PlayerMovement : MonoBehaviour
         //update rotation of object
         if (state == State.inspecting)
         {
-            Debug.Log("rotating");
+            //Debug.Log("rotating");
             RotateObject();
             //check if door is on obj raycast
             gameManager.CheckDoor();
 
         }
 
-        Debug.Log(state);
+        //Debug.Log(state);
 
     }
     private void RotateObject()
