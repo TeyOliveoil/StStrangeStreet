@@ -18,11 +18,13 @@ public class Inventory : MonoBehaviour
     {
         GameObject itemObject = new GameObject();
 
-        
-        
-
-        Instantiate(itemObject);
         itemObject.AddComponent<SpriteRenderer>();
         itemObject.GetComponent<SpriteRenderer>().sprite = newItem.itemSprite;
+
+        itemObject.AddComponent<PolygonCollider2D>();
+        itemObject.AddComponent<Rigidbody2D>();
+        itemObject.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+        Instantiate(itemObject);
     }
 }
