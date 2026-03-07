@@ -5,11 +5,13 @@ using TMPro;
 public class InteractableTrigger : MonoBehaviour
 {
     [SerializeField] private bool isBed;
+    [SerializeField] public bool cutable;
     [SerializeField] public bool onlyAnimation;
     private bool animationActive = false;
     [SerializeField] private string wanderText;
     [SerializeField] private string inspectText;
     private TMP_Text textSpace;
+    [SerializeField] public InventoryItem pickUp;
     [SerializeField] private GameObject rotatable;
     [SerializeField] private Transform idleTransform;
     [SerializeField] private Transform activeTransform;
@@ -119,17 +121,22 @@ public class InteractableTrigger : MonoBehaviour
         //add case for if nothing to pick up!?
     }
 
+
+    public void PutDownObject()
+    {
+        rotatable.transform.position = idleTransform.position;
+        hands.SetActive(false);
+        resetText();
+    }
+
     public void Deactivate()
     {
         Debug.Log("deactivating interaction");
-        playerMovement.state = PlayerMovement.State.wandering;
-        rotatable.transform.position = idleTransform.position;
+        
         //reset view
-        hands.SetActive(false);
         playerVisual.SetActive(true);
         newViewpoint.SetActive(false);
-        interactableManager.currentRotatable = null;
-        resetText();
+        showWanderText();
 
         //reset animation
         if (animator != null)
