@@ -11,11 +11,13 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private Animator charAnimator;
     [SerializeField] private Animator charHeadAnimator;
     private GameManager gameManager;
+    private AreaManager2D areaManager2D;
 
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
         gameManager = FindAnyObjectByType<GameManager>();
+        areaManager2D = FindAnyObjectByType<AreaManager2D>();
 
     }
 
@@ -29,19 +31,21 @@ public class PlayerMovement2D : MonoBehaviour
     {
         
         _moveInput = context.ReadValue<Vector2>();
-        //_moveDirection = new Vector3(_moveInput.x, 0f, _moveInput.y); 
         _moveDirection = _moveInput;
 
-        charAnimator.SetBool("isWalking", true);
-        charHeadAnimator.SetBool("isWalking", true);
+        if(context.started){
+            charAnimator.SetBool("isWalking", true);
+            charHeadAnimator.SetBool("isWalking", true);
+        }
 
-        //Debug.Log(_moveInput);
         if (context.canceled)
         {
             charAnimator.SetBool("isWalking", false);
             charHeadAnimator.SetBool("isWalking", false);
-            //Debug.Log("stopped walking");
         }
-        
+
+        areaManager2D.ScalePlayer2D();
+
+
     }
 }
