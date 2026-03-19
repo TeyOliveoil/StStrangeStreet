@@ -5,7 +5,7 @@ public class PlayerMovement2D : MonoBehaviour
 {
     private Vector2 _moveInput;
     private Vector2 _moveDirection;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] public float moveSpeed;
 
     private CharacterController charController;
     [SerializeField] private Animator charAnimator;
@@ -17,7 +17,7 @@ public class PlayerMovement2D : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         gameManager = FindAnyObjectByType<GameManager>();
-        areaManager2D = FindAnyObjectByType<AreaManager2D>();
+        areaManager2D = GetComponent<AreaManager2D>();
 
     }
 
@@ -25,6 +25,7 @@ public class PlayerMovement2D : MonoBehaviour
     {
         //update p position using movement direction + speed
         charController.Move(_moveDirection * moveSpeed * Time.deltaTime);
+        areaManager2D.ScalePlayer2D();
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -44,7 +45,7 @@ public class PlayerMovement2D : MonoBehaviour
             charHeadAnimator.SetBool("isWalking", false);
         }
 
-        areaManager2D.ScalePlayer2D();
+        
 
 
     }
