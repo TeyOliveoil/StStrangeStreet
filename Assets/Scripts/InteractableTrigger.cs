@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 [RequireComponent(typeof(BoxCollider))]
 public class InteractableTrigger : MonoBehaviour
@@ -7,6 +8,7 @@ public class InteractableTrigger : MonoBehaviour
     [SerializeField] private bool isBed;
     [SerializeField] public bool cutable;
     [SerializeField] public bool onlyAnimation;
+    [SerializeField] public bool tertiary;
     private bool animationActive = false;
     [SerializeField] private string wanderText;
     [SerializeField] private string inspectText;
@@ -16,6 +18,9 @@ public class InteractableTrigger : MonoBehaviour
     [SerializeField] private Transform idleTransform;
     [SerializeField] private Transform activeTransform;
     [SerializeField] private GameObject hands;
+
+    
+    
 
     private Animator animator;
     [SerializeField] private GameObject newViewpoint;
@@ -67,16 +72,24 @@ public class InteractableTrigger : MonoBehaviour
             animator.SetTrigger("StartInteraction");
             //SetInteractableView is called in the actual animation timeline itself so the timing fits :-)
 
+            // vvv for stupid people
+            if (tertiary) { StartCoroutine(WaitForState("Open")); }
+            
+
             if (isBed)
             {
                 gameManager.NewDay(); //increase day, might not be necessary!!
             }
+            
         }
         else
         {
             SetInteractableView();
         }
     }
+
+    //waiting for the Door to open
+    IEnumerator WaitForState(string stateName) { yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)); SetInteractableView(); }
 
     public void TriggerAnimation()
     {
@@ -100,7 +113,8 @@ public class InteractableTrigger : MonoBehaviour
         //update viewpoint
         gameManager.currentViewpoint = newViewpoint.GetComponent<Camera>();
         //hide player
-        playerVisual.SetActive(false);
+        if (!tertiary) { playerVisual.SetActive(false); }
+        
 
         if (newViewpoint != null)
         {
